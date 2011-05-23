@@ -1,0 +1,103 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using runner.Object;
+
+namespace runner.Platform
+{
+    /// <summary>
+    /// Static class producing platforms
+    /// </summary>
+    static class PlatformFactory
+    {
+        static int generateX(int lastX, Random random)
+        {
+            return lastX + random.Next(12 * (int)GameState.scrollingSpeed, 18 * (int)GameState.scrollingSpeed);
+        }
+
+        static int generateHeight(int lastH, Random random)
+        {
+            return lastH + random.Next(-30, 50);
+        }
+
+        /// <summary>
+        /// Adds a normal platform to the list
+        /// </summary>
+        /// <param name="platforms"></param>
+        /// <param name="obstacles"></param>
+        /// <param name="random"></param>
+        /// <param name="screenHeight"></param>
+        /// <param name="h"></param>
+        static void addNormalPlatform(List<PlatformTemplate> platforms, List<ObstacleTemplate> obstacles, Random random, int screenHeight, int h)
+        {
+            int x = generateX(platforms.Last().boundingBox.Right, random);
+            int height;
+            if (h == 0)
+            {
+                height = generateHeight(platforms.Last().boundingBox.Height, random);
+                if (height > 300) height = 250;
+                if (height <= 0) height = 20;
+            }
+            else
+                height = h;
+            int width = random.Next(200, 500);
+            NormalPlatform p = new NormalPlatform(x, screenHeight, width, height, Textures.dummy);
+
+            //place objects on the platform
+            if (width > 300)
+            {
+                int objectsToPlace = random.Next(0, (int)width / 150);
+                for (int i = 0; i < objectsToPlace; i++)
+                    obstacles.Add(p.PlaceObstacleOnPlatform(25, 25, random));
+            }
+            platforms.Add(p);
+        }
+
+        /// <summary>
+        /// Adds random new platforms to the platforms list
+        /// </summary>
+        /// <param name="platforms"></param>
+        /// <param name="obstacles"></param>
+        /// <param name="random"></param>
+        /// <param name="screenHeight"></param>
+        public static void UpdatePlatformsList(List<PlatformTemplate> platforms, List<ObstacleTemplate> obstacles, Random random, int screenHeight)
+        {
+            int platformType = random.Next(0, 5);
+
+            if (platformType < 3)
+            {
+                //normal latform
+                addNormalPlatform(platforms, obstacles, random, screenHeight, 0);
+            }
+            else if (platformType == 3)
+            {
+                //falling platform
+                int x = generateX(platforms.Last().boundingBox.Right, random);
+                int height = height = generateHeight(platforms.Last().boundingBox.Height, random);
+                if (height > 300) height = 250;
+                if (height <= 0) height = 20;
+                int width = random.Next(200, 300);
+
+                FallingPlatform fP = new FallingPlatform(x, screenHeight, width, height, Textures.dummy);
+                platforms.Add(fP);
+
+                addNormalPlatform(platforms, obstacles, random, screenHeight, height+random.Next(0,20));
+            }
+            else if (platformType == 4)
+            {
+                //tunnel platform
+                int x = generateX(platforms.Last().boundingBox.Right, random);
+                int height = height = generateHeight(platforms.Last().boundingBox.Height, random);
+                if (height > 300) height = 250;
+                if (height <= 0) height = 20;
+                int width = random.Next(200, 500);
+
+                TunnelPlatform tP = new TunnelPlatform(x, screenHeight, width, height, Textures.dummy);
+                platforms.Add(tP);
+
+                addNormalPlatform(platforms, obstacles, random, screenHeight, height + random.Next(-10, 20));
+            }
+        }
+    }
+}

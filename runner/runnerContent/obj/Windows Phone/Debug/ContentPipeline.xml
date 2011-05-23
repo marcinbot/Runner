@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>player.png</Source>
+      <Name>player</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\player.xnb</Output>
+      <Time>2011-04-12T15:47:44.3500932+01:00</Time>
+    </Item>
+    <Item>
+      <Source>SpriteFont1.spritefont</Source>
+      <Name>SpriteFont1</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\SpriteFont1.xnb</Output>
+      <Time>2011-04-12T16:45:14.4585812+01:00</Time>
+    </Item>
+    <Item>
+      <Source>dummy.png</Source>
+      <Name>dummy</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\dummy.xnb</Output>
+      <Time>2011-04-17T23:31:23.8150623+01:00</Time>
+    </Item>
+    <Item>
+      <Source>building.png</Source>
+      <Name>building</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\building.xnb</Output>
+      <Time>2011-05-04T17:48:04.4244831+01:00</Time>
+    </Item>
+    <Item>
+      <Source>runner.png</Source>
+      <Name>runner</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\runner.xnb</Output>
+      <Time>2011-05-04T17:48:42.4520042+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>WindowsPhone</TargetPlatform>
+      <TargetProfile>Reach</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\</RootDirectory>
+      <LoggerRootDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\</LoggerRootDirectory>
+      <IntermediateDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T13:41:18+01:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2011-02-09T20:57:16.6055049+00:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

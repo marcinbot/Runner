@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "runner", "runner\runner\runner.csproj", "{8A886D01-1CDC-4359-8F87-A8CEC499C995}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "runnerContent", "runner\runnerContent\runnerContent.contentproj", "{2A440087-CA37-49A4-9F32-8E69C3D20F17}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Windows Phone = Debug|Windows Phone
+		Release|Windows Phone = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8A886D01-1CDC-4359-8F87-A8CEC499C995}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{8A886D01-1CDC-4359-8F87-A8CEC499C995}.Debug|Windows Phone.Build.0 = Debug|Windows Phone
+		{8A886D01-1CDC-4359-8F87-A8CEC499C995}.Debug|Windows Phone.Deploy.0 = Debug|Windows Phone
+		{8A886D01-1CDC-4359-8F87-A8CEC499C995}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+		{8A886D01-1CDC-4359-8F87-A8CEC499C995}.Release|Windows Phone.Build.0 = Release|Windows Phone
+		{8A886D01-1CDC-4359-8F87-A8CEC499C995}.Release|Windows Phone.Deploy.0 = Release|Windows Phone
+		{2A440087-CA37-49A4-9F32-8E69C3D20F17}.Debug|Windows Phone.ActiveCfg = Debug|Windows Phone
+		{2A440087-CA37-49A4-9F32-8E69C3D20F17}.Release|Windows Phone.ActiveCfg = Release|Windows Phone
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

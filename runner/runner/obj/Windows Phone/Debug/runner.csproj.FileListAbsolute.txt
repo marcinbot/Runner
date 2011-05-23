@@ -1,0 +1,17 @@
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\runner.dll
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\runner.pdb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\ResolveAssemblyReference.cache
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\runner.dll
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\runner.pdb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\AppManifest.xaml
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\WMAppManifest.xml.g
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\GameThumbnail.png
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\runner.xap
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\XapCacheFile.xml
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\player.xnb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\SpriteFont1.xnb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\dummy.xnb
+D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\building.xnb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\runner.xnb

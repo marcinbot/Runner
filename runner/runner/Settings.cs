@@ -1,0 +1,15 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace runner
+{
+    /// <summary>
+    /// Static class holding game settings
+    /// </summary>
+    static class Settings
+    {
+        public static bool vibrate = false;
+    }
+}

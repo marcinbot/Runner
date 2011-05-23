@@ -1,0 +1,47 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using runner.Object;
+
+namespace runner.Platform
+{
+    /// <summary>
+    /// Represents a platform that will start crumbling down once the player lands on it
+    /// </summary>
+    class FallingPlatform : PlatformTemplate
+    {
+        bool falling;
+
+        public FallingPlatform(int x, int screenHeight, int width, int height, Texture2D texture)
+            : base(x, screenHeight, width, height, texture)
+        {
+            falling = false;
+        }
+
+        public override void HandleCollision()
+        {
+            falling = true;
+            VibrationController.Start(3);
+        }
+
+        public override void Update()
+        {
+            if (falling)
+                boundingBox.Y += 2;
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture, boundingBox, Color.Blue);
+        }
+
+        public override void HandleRelease()
+        {
+            VibrationController.Stop();
+        }
+    }
+}

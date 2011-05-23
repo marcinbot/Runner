@@ -1,0 +1,12 @@
+﻿<xapCache source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\runner.xap" wasSigned="False" certificateThumbprint="" TimeStampUrl="" lastWriteTime="23/05/2011 23:01:05">
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\Background.png" archivePath="Background.png" lastWriteTime="12/04/2011 12:39:01" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\GameThumbnail.png" archivePath="GameThumbnail.png" lastWriteTime="12/04/2011 12:39:01" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\AppManifest.xaml" archivePath="AppManifest.xaml" lastWriteTime="12/04/2011 15:51:31" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\WMAppManifest.xml" archivePath="WMAppManifest.xml" lastWriteTime="12/04/2011 15:51:31" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\runner.dll" archivePath="runner.dll" lastWriteTime="23/05/2011 23:00:56" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\player.xnb" archivePath="Content\player.xnb" lastWriteTime="12/04/2011 15:53:25" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\SpriteFont1.xnb" archivePath="Content\SpriteFont1.xnb" lastWriteTime="12/04/2011 16:46:40" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\dummy.xnb" archivePath="Content\dummy.xnb" lastWriteTime="17/04/2011 23:32:53" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\building.xnb" archivePath="Content\building.xnb" lastWriteTime="23/05/2011 23:00:51" />
+  <file source="d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\runner.xnb" archivePath="Content\runner.xnb" lastWriteTime="23/05/2011 23:00:52" />
+</xapCache>

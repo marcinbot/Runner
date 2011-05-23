@@ -1,0 +1,161 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input.Touch;
+using runner;
+using runner.Platform;
+
+namespace runner
+{
+    /// <summary>
+    /// Class representing a main character
+    /// </summary>
+    class Player
+    {
+        public Texture2D texture;
+        public Rectangle boundingBox;
+        public bool isRunning;
+
+        public int Y
+        {
+            get { return (int)boundingBox.Y; }
+            set { boundingBox.Y = value; }
+        }
+
+        public void Initialize(Texture2D texture, int x, int y)
+        {
+            isRunning = true;
+            canJumpAgain = true;
+            this.texture = texture;
+            boundingBox = new Rectangle(x, y, 50, 50);
+        }
+
+        public void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture, boundingBox, Color.White);
+        }
+
+        int startY;
+        bool jumping;
+        bool standing;
+        PlatformTemplate currentPlatform;
+
+        /// <summary>
+        /// Checks if player is colliding with a platform
+        /// </summary>
+        /// <param name="platforms">list of platforms</param>
+        void checkForCollisions(List<PlatformTemplate> platforms)
+        {
+            if (!isRunning)
+                return;
+            standing = false;
+            foreach (PlatformTemplate p in platforms)
+            {
+                if (p is TunnelPlatform)
+                {
+                    if (boundingBox.Right > ((TunnelPlatform)p).topBoundingBox.Left && 
+                        boundingBox.Right < ((TunnelPlatform)p).topBoundingBox.Left + GameState.scrollingSpeed &&
+                        boundingBox.Top < ((TunnelPlatform)p).topBoundingBox.Bottom - flySpeed &&
+                        boundingBox.Right < ((TunnelPlatform)p).topBoundingBox.Right)
+                    {
+                        standing = false;
+                        isRunning = false;
+                        break;
+                    }
+                    else if (jumping && boundingBox.Intersects(((TunnelPlatform)p).topBoundingBox))
+                        jumping = false;
+                }
+
+                if (boundingBox.Right > p.boundingBox.Left && 
+                    boundingBox.Right < p.boundingBox.Left + GameState.scrollingSpeed && 
+                    boundingBox.Bottom > p.boundingBox.Top + flySpeed && 
+                    boundingBox.Right < p.boundingBox.Right)
+                {
+                    standing = false;
+                    isRunning = false;
+                    break;
+                }
+                else if (boundingBox.Bottom >= p.boundingBox.Top && 
+                    boundingBox.Right >= p.boundingBox.Left && 
+                    boundingBox.Left <= p.boundingBox.Right)
+                {
+                    currentPlatform = p;
+                    if (!standing)
+                        currentPlatform.HandleCollision();
+                    boundingBox.Y -= boundingBox.Bottom - currentPlatform.boundingBox.Top;
+                    standing = true;
+                    break;
+                    //return true;
+                }
+            }
+            //return false;
+        }
+
+        int maxHeight;
+        int flySpeed;
+        int jumpCount;
+        bool canJumpAgain;
+        void determineHeightAndSpeed(float speed)
+        {
+            maxHeight = 100;
+            flySpeed = 7;
+            if (speed >= 10 && speed < 15)
+            {
+                flySpeed = 9;
+                maxHeight = 120;
+            }
+            if (speed >= 15)
+            {
+                flySpeed = 12;
+                maxHeight = 150;
+            }
+        }
+
+        public void Update(List<PlatformTemplate> platforms)
+        {
+            determineHeightAndSpeed(GameState.scrollingSpeed);
+            checkForCollisions(platforms);
+            if (!standing)
+                jumpCount++;
+            else
+                jumpCount = 0;
+            TouchCollection touchCollection = TouchPanel.GetState();
+            foreach (TouchLocation tl in touchCollection)
+            {
+                if (tl.State == TouchLocationState.Released)
+                {
+                    canJumpAgain = true;
+                    jumping = false;
+                }
+                if (tl.State == TouchLocationState.Pressed || tl.State == TouchLocationState.Moved)
+                {
+                    if (standing && canJumpAgain)
+                    {
+                        jumping = true;
+                        startY = boundingBox.Y;
+                        canJumpAgain = false;
+                        currentPlatform.HandleRelease();
+                    }
+                    if (jumping && Math.Abs(boundingBox.Y - startY) <= maxHeight)
+                    {
+                        boundingBox.Y -= (flySpeed + jumpCount);
+                    }
+                    if (Math.Abs(boundingBox.Y - startY) >= maxHeight)
+                    {
+                        jumping = false;
+                    }
+                    break;
+                }
+            }
+
+            if (!jumping && !standing)
+            {
+                boundingBox.Y += flySpeed;
+            }
+        }
+
+    }
+}

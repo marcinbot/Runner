@@ -1,0 +1,22 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+using runner.Object;
+
+namespace runner.Platform
+{
+    /// <summary>
+    /// Represents a static platform, that won't fall, explode or do anything unexpected. It's just there.
+    /// </summary>
+    class NormalPlatform : PlatformTemplate
+    {
+        public NormalPlatform(int x, int screenHeight, int width, int height, Texture2D texture)
+            : base(x, screenHeight, width, height, texture)
+        {
+        }
+    }
+}

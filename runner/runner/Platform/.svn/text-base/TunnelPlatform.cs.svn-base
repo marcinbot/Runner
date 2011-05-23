@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
+using Microsoft.Xna.Framework.Graphics;
+
+namespace runner.Platform
+{
+    /// <summary>
+    /// Represents a platform that also has a ceiling
+    /// </summary>
+    class TunnelPlatform : PlatformTemplate
+    {
+        public Rectangle topBoundingBox;
+
+        public TunnelPlatform(int x, int screenHeight, int width, int height, Texture2D texture)
+            : base(x, screenHeight, width, height, texture)
+        {
+            topBoundingBox = new Rectangle(x, 0, width, screenHeight - height - 100);
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            spriteBatch.Draw(texture, boundingBox, Color.Yellow);
+            spriteBatch.Draw(texture, topBoundingBox, Color.Yellow);
+        }
+
+        public override void Update()
+        {
+            topBoundingBox.X = boundingBox.X;
+        }
+
+
+    }
+}
