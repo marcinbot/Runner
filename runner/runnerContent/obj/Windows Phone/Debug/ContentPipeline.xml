@@ -44,7 +44,34 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\runner.xnb</Output>
-      <Time>2011-05-04T17:48:42.4520042+01:00</Time>
+      <Time>2011-05-26T23:04:53.02394+01:00</Time>
+    </Item>
+    <Item>
+      <Source>obstacles.png</Source>
+      <Name>obstacles</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\obstacles.xnb</Output>
+      <Time>2011-05-26T23:43:11.7363922+01:00</Time>
+    </Item>
+    <Item>
+      <Source>sky.png</Source>
+      <Name>sky</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\sky.xnb</Output>
+      <Time>2011-05-27T00:13:38.2613183+01:00</Time>
+    </Item>
+    <Item>
+      <Source>clouds.png</Source>
+      <Name>clouds</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\clouds.xnb</Output>
+      <Time>2011-05-27T00:11:18.1354141+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -52,10 +79,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\</RootDirectory>
-      <LoggerRootDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\</LoggerRootDirectory>
-      <IntermediateDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\</RootDirectory>
+      <LoggerRootDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\</LoggerRootDirectory>
+      <IntermediateDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

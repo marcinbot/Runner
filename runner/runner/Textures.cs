@@ -12,7 +12,6 @@ namespace runner
     /// </summary>
     static class Textures
     {
-        public static Texture2D dummy;
-        public static Texture2D building;
+        public static Texture2D dummy, building, runner, obstacles, sky, clouds;
     }
 }

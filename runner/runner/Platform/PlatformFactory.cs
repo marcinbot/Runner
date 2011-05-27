@@ -45,15 +45,14 @@ namespace runner.Platform
             }
             else
                 height = h;
-            int width = GameState.random.Next(4, 10);
+            int width = GameState.random.Next(6, 14);
             NormalPlatform p = new NormalPlatform(x, screenHeight, width, height, Textures.dummy);
 
             //place objects on the platform
             if (width > 6)
             {
                 int objectsToPlace = GameState.random.Next(0, (int)width / 3);
-                for (int i = 0; i < objectsToPlace; i++)
-                    obstacles.Add(p.PlaceObstacleOnPlatform(25, 25));
+                obstacles.AddRange(p.PlaceObstacleOnPlatform(25, 25, objectsToPlace));
             }
             platforms.Add(p);
         }
@@ -95,7 +94,7 @@ namespace runner.Platform
                 int height = generateHeight(platforms.Last().boundingBox.Height);
                 if (height > 300) height = 250;
                 if (height <= 0) height = 60;
-                int width = GameState.random.Next(4, 10);
+                int width = GameState.random.Next(6, 12);
                 if (width % 2 == 1)
                     width += 1;
 

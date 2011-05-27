@@ -18,6 +18,7 @@ namespace runner
         public Texture2D texture;
         public Rectangle boundingBox;
         public bool isRunning;
+        Animation animation;
 
         public int Y
         {
@@ -30,15 +31,17 @@ namespace runner
             isRunning = true;
             canJumpAgain = true;
             this.texture = texture;
-            boundingBox = new Rectangle(x, y, 50, 50);
+            boundingBox = new Rectangle(x, y, 30, 50);
+            this.animation = new Animation(Textures.runner, new Vector2(0, 0), 50, 50, 8, 85, Color.White, 1.0f, true);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, boundingBox, Color.White);
+            //spriteBatch.Draw(texture, boundingBox, Color.White);
+            animation.Draw(spriteBatch);
         }
 
-        int startY;
+        //int startY;
         bool jumping;
         public bool standing;
         PlatformTemplate currentPlatform;
@@ -89,7 +92,7 @@ namespace runner
                     currentPlatform = p;
                     if (!standing)
                         currentPlatform.HandleCollision();
-                    boundingBox.Y -= boundingBox.Bottom - currentPlatform.boundingBox.Top;
+                    boundingBox.Y -= boundingBox.Bottom - currentPlatform.boundingBox.Top - 2;
                     standing = true;
                     break;
                     //return true;
@@ -101,19 +104,47 @@ namespace runner
         //int maxHeight;
         int flySpeed;
         bool canJumpAgain;
+        int maxHeight;
 
-        public void Update(List<PlatformTemplate> platforms)
+        public void Update(GameTime gameTime, List<PlatformTemplate> platforms)
         {
+            animation.animating = standing;
+            animation.frameTime = (int)(80 - GameState.scrollingSpeed);
+            animation.Position.X = boundingBox.X-20;
+            animation.Position.Y = boundingBox.Y;
+            animation.Update(gameTime);
             checkForCollisions(platforms);
             if (!standing)
             {
+                animation.rowI = 1;
                 if (!jumping)
+                {
+                    //descending
+                    if (flySpeed < maxHeight / 4)
+                        animation.currentFrame = 2;
+                    else if (flySpeed < maxHeight / 2)
+                        animation.currentFrame = 3;
+                    else
+                        animation.currentFrame = 4;
                     flySpeed++;
+                }
                 else
+                {
+                    //ascending
+                    if (flySpeed > 3*maxHeight/4)
+                        animation.currentFrame = 0;
+                    else if (flySpeed > maxHeight / 2)
+                        animation.currentFrame = 1;
+                    else
+                        animation.currentFrame = 2;
                     flySpeed--;
+                }
             }
             else
+            {
+                animation.rowI = 0;
                 flySpeed = 0;
+            }
 
             TouchCollection touchCollection = TouchPanel.GetState();
             foreach (TouchLocation tl in touchCollection)
@@ -135,9 +166,9 @@ namespace runner
                             flySpeed = (int)GameState.scrollingSpeed;//12;
                         else
                             flySpeed = 15;
-
+                        maxHeight = flySpeed;
                         jumping = true;
-                        startY = boundingBox.Y;
+                        //startY = boundingBox.Y;
                         canJumpAgain = false;
                         currentPlatform.HandleRelease();
                     }

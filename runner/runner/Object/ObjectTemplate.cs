@@ -14,7 +14,7 @@ namespace runner.Object
         Texture2D texture;
         public bool isActive;
         public float rotation;
-        Vector2 origin;
+        public Vector2 origin;
 
         public ObjectTemplate()
         {
@@ -26,7 +26,7 @@ namespace runner.Object
             boundingBox = new Rectangle(x, y, width, height);
             this.texture = texture;
             rotation = .0f;
-            origin = new Vector2(0.5f, 0.5f);
+            origin = new Vector2(width/2, height/2);
         }
 
         public void Draw(SpriteBatch spriteBatch)

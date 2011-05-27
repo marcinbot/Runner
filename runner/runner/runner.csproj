@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Animation.cs" />
+    <Compile Include="Background.cs" />
     <Compile Include="GameState.cs" />
     <Compile Include="Object\ObjectTemplate.cs" />
     <Compile Include="Object\ObstacleTemplate.cs" />

@@ -69,20 +69,24 @@ namespace runner
             spriteBatch = new SpriteBatch(GraphicsDevice);
             spriteFont = Content.Load<SpriteFont>("SpriteFont1");
 
-            GameState.player.Initialize(Content.Load<Texture2D>("player"), 
-                GraphicsDevice.Viewport.TitleSafeArea.X + 100, 
-                GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height - 150);
-
             //load textures
             Textures.dummy = Content.Load<Texture2D>("dummy");
             Textures.building = Content.Load<Texture2D>("building");
+            Textures.runner = Content.Load<Texture2D>("runner");
+            Textures.obstacles = Content.Load<Texture2D>("obstacles");
+            Textures.sky = Content.Load<Texture2D>("sky");
+            Textures.clouds = Content.Load<Texture2D>("clouds");
+
+            GameState.player.Initialize(Content.Load<Texture2D>("player"),
+            GraphicsDevice.Viewport.TitleSafeArea.X + 100,
+            GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height - 150);
 
             //create first platforms
             platforms.Add(new TunnelPlatform(0, GraphicsDevice.Viewport.TitleSafeArea.Height, 14, 300, Textures.dummy));
             platforms.Add(new NormalPlatform(750, GraphicsDevice.Viewport.TitleSafeArea.Height, 5, 150, Textures.dummy));
             platforms.Add(new NormalPlatform(1050, GraphicsDevice.Viewport.TitleSafeArea.Height, 4, 100, Textures.dummy));
             platforms.Add(new NormalPlatform(1300, GraphicsDevice.Viewport.TitleSafeArea.Height, 8, 90, Textures.dummy));
-            obstacles.Add(platforms.ElementAt(3).PlaceObstacleOnPlatform(25, 25));
+            obstacles.AddRange(platforms.ElementAt(3).PlaceObstacleOnPlatform(25, 25, 1));
         }
 
         /// <summary>
@@ -106,7 +110,7 @@ namespace runner
                 this.Exit();
             }
 
-            GameState.player.Update(platforms);
+            GameState.player.Update(gameTime, platforms);
 
             if (GameState.player.isRunning)
             {
@@ -151,7 +155,7 @@ namespace runner
 
             if (GameState.player.boundingBox.Top > GraphicsDevice.Viewport.TitleSafeArea.Height)
                 this.Exit();
-
+            //GameState.debug = Convert.ToString(GraphicsDevice.Viewport.TitleSafeArea.Height) + " " + Convert.ToString(GraphicsDevice.Viewport.TitleSafeArea.Width);
             base.Update(gameTime);
         }
 
@@ -164,6 +168,8 @@ namespace runner
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             spriteBatch.Begin();
+
+            spriteBatch.Draw(Textures.sky, new Vector2(0, 0), Color.White);
 
             spriteBatch.DrawString(spriteFont, GameState.debug, new Vector2(0, 0), Color.Black);
             GameState.scoreString = Convert.ToString((int)GameState.score);

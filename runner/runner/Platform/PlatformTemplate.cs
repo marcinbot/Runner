@@ -28,10 +28,18 @@ namespace runner.Platform
             spriteBatch.Draw(texture, boundingBox, Color.Red);
         }
 
-        public ObstacleTemplate PlaceObstacleOnPlatform(int width, int height)
+        public List<ObstacleTemplate> PlaceObstacleOnPlatform(int width, int height, int num)
         {
-            int x = GameState.random.Next(boundingBox.Left + 50, boundingBox.Right - width - 60);
-            return new ObstacleTemplate(x, boundingBox.Y-height, width, height, Textures.dummy);
+            List<ObstacleTemplate> l = new List<ObstacleTemplate>();
+            int x = boundingBox.Left;
+            for (int i = 0; i < num; i++)
+            {
+                if (x + 50 >= boundingBox.Right - width - 60)
+                    break;
+                x = GameState.random.Next(x + 50, boundingBox.Right - width - 60);
+                l.Add(new ObstacleTemplate(x, boundingBox.Y - height, width, height, Textures.dummy));
+            }
+            return l;
         }
 
         public virtual void HandleCollision()
