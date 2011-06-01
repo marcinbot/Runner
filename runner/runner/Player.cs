@@ -109,7 +109,7 @@ namespace runner
         public void Update(GameTime gameTime, List<PlatformTemplate> platforms)
         {
             animation.animating = standing;
-            animation.frameTime = (int)(80 - GameState.scrollingSpeed);
+            animation.frameTime = (int)(75 - GameState.scrollingSpeed);
             animation.Position.X = boundingBox.X-20;
             animation.Position.Y = boundingBox.Y;
             animation.Update(gameTime);

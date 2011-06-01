@@ -71,7 +71,16 @@
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\clouds.xnb</Output>
-      <Time>2011-05-27T00:11:18.1354141+01:00</Time>
+      <Time>2011-05-27T20:42:45.5755839+01:00</Time>
+    </Item>
+    <Item>
+      <Source>city1.png</Source>
+      <Name>city1</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\city1.xnb</Output>
+      <Time>2011-05-31T14:26:13.8265756+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
@@ -79,10 +88,10 @@
       <TargetProfile>Reach</TargetProfile>
       <BuildConfiguration>Debug</BuildConfiguration>
       <CompressContent>false</CompressContent>
-      <RootDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\</RootDirectory>
-      <LoggerRootDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\</LoggerRootDirectory>
-      <IntermediateDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\obj\Windows Phone\Debug\</IntermediateDirectory>
-      <OutputDirectory>D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\</OutputDirectory>
+      <RootDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\</RootDirectory>
+      <LoggerRootDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\</LoggerRootDirectory>
+      <IntermediateDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runnerContent\obj\Windows Phone\Debug\</IntermediateDirectory>
+      <OutputDirectory>d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\</OutputDirectory>
     </Settings>
     <Assemblies>
       <Assembly>

@@ -18,3 +18,10 @@ d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\
 D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\obstacles.xnb
 D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\sky.xnb
 D:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\clouds.xnb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\Content\city1.xnb
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\runner.xap
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\XapCacheFile.xml
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\bin\Windows Phone\Debug\AppManifest.xaml
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\WMAppManifest.xml.g
+d:\Documents\Visual Studio 2010\Projects\runner\runner\runner\obj\Windows Phone\Debug\WMAppManifest.xml
+bin\Windows Phone\Debug\GameThumbnail.png

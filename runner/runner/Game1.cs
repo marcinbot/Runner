@@ -25,6 +25,8 @@ namespace runner
         SpriteFont spriteFont;
         enum GameMode { MainMenu, GameScreen, GameOver };
 
+        Background clouds, city1;
+
         List<PlatformTemplate> platforms;
         List<ObstacleTemplate> obstacles;
 
@@ -75,11 +77,14 @@ namespace runner
             Textures.runner = Content.Load<Texture2D>("runner");
             Textures.obstacles = Content.Load<Texture2D>("obstacles");
             Textures.sky = Content.Load<Texture2D>("sky");
-            Textures.clouds = Content.Load<Texture2D>("clouds");
+            //Textures.clouds = Content.Load<Texture2D>("clouds");
 
             GameState.player.Initialize(Content.Load<Texture2D>("player"),
             GraphicsDevice.Viewport.TitleSafeArea.X + 100,
             GraphicsDevice.Viewport.TitleSafeArea.Y + GraphicsDevice.Viewport.TitleSafeArea.Height - 150);
+
+            clouds = new Background(Content.Load<Texture2D>("clouds"), 400, 480, 0.2f, 4, GraphicsDevice.Viewport.Width);
+            city1 = new Background(Content.Load<Texture2D>("city1"), 400, 480, 0.3f, 4, GraphicsDevice.Viewport.Width);
 
             //create first platforms
             platforms.Add(new TunnelPlatform(0, GraphicsDevice.Viewport.TitleSafeArea.Height, 14, 300, Textures.dummy));
@@ -109,6 +114,9 @@ namespace runner
             {
                 this.Exit();
             }
+
+            clouds.Update();
+            city1.Update();
 
             GameState.player.Update(gameTime, platforms);
 
@@ -170,6 +178,8 @@ namespace runner
             spriteBatch.Begin();
 
             spriteBatch.Draw(Textures.sky, new Vector2(0, 0), Color.White);
+            clouds.Draw(spriteBatch);
+            city1.Draw(spriteBatch);
 
             spriteBatch.DrawString(spriteFont, GameState.debug, new Vector2(0, 0), Color.Black);
             GameState.scoreString = Convert.ToString((int)GameState.score);
